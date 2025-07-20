@@ -63,3 +63,11 @@ INSERT INTO bankdata (emp_id, fname, lname, email, dept, salary, hire_date)
 (8, 'Rahul', 'Kumar', 'rahul.kumar@example.com', 'IT', 53000.00, '2021-02-14'),
 (9, 'Anjali', 'Mehta', 'anjali.mehta@example.com', 'Finance', 61000.00, '2018-12-03'),
 (10, 'Vijay', 'Nair', 'vijay.nair@example.com', 'Marketing', 50000.00, '2020-04-19');
+
+
+
+-- clause is sql querry with some condition 
+
+-- WHERE, DISTINCT, ORDER BY, LIMIT, LIKE
+
+ 
