@@ -71,3 +71,4 @@ INSERT INTO bankdata (emp_id, fname, lname, email, dept, salary, hire_date)
 -- WHERE, DISTINCT, ORDER BY, LIMIT, LIKE
 
  
+ 
