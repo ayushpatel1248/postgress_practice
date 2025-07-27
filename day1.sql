@@ -71,4 +71,58 @@ INSERT INTO bankdata (emp_id, fname, lname, email, dept, salary, hire_date)
 -- WHERE, DISTINCT, ORDER BY, LIMIT, LIKE
 
  
+ select * from bankdata
+where salary >= 50000 and dept='IT';
+
+select * from bankdata  
+WHERE dept IN('it', 'finance');
+
+select * from bankdata  
+WHERE dept NOTIN('it', 'finance');
+
+select * from bankdata 
+WHERE salary BETWEEN 50000 AND 60000;
+
+
+-- DISTINCT is used for unique values and avoid repeatation
+
+select distinct dept from bankdata;
+
+-- ORDER BY for ascensding order sorting
+--  for DESCending ORDER BY DESC
+select fname from bankdata order by fname;
+select fname from bankdata order by fname DESC;
+
+
+-- limit clause
+
+select * from bankdata limit 3;
+
+-- for pattern we use like
+
+select * from bankdata 
+where fname like 'A%';
+
+-- for matching from last 
+select * from bankdata 
+where fname like '%A';
+
+-- for any where in the text patter match
+select * from bankdata 
+where fname like '%A% ';
+
+-- if want 2nd or 3rd or any letter or any number of letter we use _ underscore
+-- its for finding dept which have only 2 charc
+select * from bankdata 
+where dept like '__';
+
+-- for second charc to be a
+select * from bankdata 
+where fname like '_a%';
+
+
+-- to get count  
+select count(emp_id) from bankdata 
+where salary >= 50000;
+
  
