@@ -125,4 +125,16 @@ where fname like '_a%';
 select count(emp_id) from bankdata 
 where salary >= 50000;
 
- 
+ select sum(salary) from bankdata 
+where salary >= 50000;
+
+select avg(salary) from bankdata 
+where salary >= 50000;
+
+select min(salary) from bankdata;
+
+select max(salary) from bankdata;
+
+-- very imp GROUP BY
+
+select dept, count(dept), max(salary) from bankdata group by dept;
