@@ -138,3 +138,4 @@ select max(salary) from bankdata;
 -- very imp GROUP BY
 
 select dept, count(dept), max(salary) from bankdata group by dept;
+
