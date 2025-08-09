@@ -139,3 +139,8 @@ select max(salary) from bankdata;
 
 select dept, count(dept), max(salary) from bankdata group by dept;
 
+
+select * from bankdata;
+select replace(dept ,'IT', 'TECH') from bankdata;
+select salary, count(salary) from bankdata group by salary;
+select dept ,count(dept) from bankdata group by dept;
