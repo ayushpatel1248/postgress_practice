@@ -158,3 +158,27 @@ where substr(fname, 1, 1) = 'A';
 select * from bankdata
 where length(fname) = 4;
 
+select  dept, sum(salary) as totalsalbydept , count(dept) from bankdata
+group by dept;
+
+alter table bankdata
+rename column foname to fname;
+
+alter table bankdata
+alter column fname
+set data type VARCHAR(150);
+
+alter table bankdata
+add column mob varchar(15)
+check (length(mob) >= 10);
+
+
+-- for updating the data in table 
+UPDATE bankdata 
+set mob = 6272868
+where salary >= 50000;
+
+
+-- inserting new value into the table 
+insert into bankdata(fname, lname, email, dept, salary, mob)
+values('rimon', 'chakraboarty', 'abc@gmail.com', 'IT', 50000, 8269987586);
