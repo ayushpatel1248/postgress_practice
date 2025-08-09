@@ -144,3 +144,17 @@ select * from bankdata;
 select replace(dept ,'IT', 'TECH') from bankdata;
 select salary, count(salary) from bankdata group by salary;
 select dept ,count(dept) from bankdata group by dept;
+
+
+select distinct dept as alldept from bankdata where salary > 60000;
+select * from bankdata
+order by salary desc;
+
+select * from bankdata limit 3;
+
+select * from bankdata
+where substr(fname, 1, 1) = 'A';
+
+select * from bankdata
+where length(fname) = 4;
+
