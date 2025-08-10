@@ -21,3 +21,39 @@ CREATE TABLE orders (
 );
 
 select * from customers cross join orders;
+
+
+select * from customers c
+inner join 
+orders o
+on c.cust_id = o.cust_id;
+
+
+
+SELECT 
+  c.cust_name,
+  COUNT(o.ord_id) AS total_orders,
+  sum(o.price) as price
+FROM customers c2
+INNER JOIN orders o ON c.cust_id = o.cust_id
+GROUP BY c.cust_name;
+
+
+SELECT 
+  c.cust_name,
+  COUNT(o.ord_id) AS total_orders,
+  sum(o.price) as price
+FROM customers c
+left JOIN orders o ON c.cust_id = o.cust_id
+GROUP BY c.cust_name;
+
+
+-- right join  
+SELECT 
+  c.cust_name,
+  COUNT(o.ord_id) AS total_orders,
+  sum(o.price) as price
+FROM customers c
+right JOIN orders o ON c.cust_id = o.cust_id
+GROUP BY c.cust_name;
+
