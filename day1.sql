@@ -182,3 +182,12 @@ where salary >= 50000;
 -- inserting new value into the table 
 insert into bankdata(fname, lname, email, dept, salary, mob)
 values('rimon', 'chakraboarty', 'abc@gmail.com', 'IT', 50000, 8269987586);
+
+
+-- case statement
+select *,
+CASE
+	when salary >= 50000 then  'high'
+	 else 'low'
+    end as category
+from bankdata;
