@@ -57,3 +57,11 @@ FROM customers c
 right JOIN orders o ON c.cust_id = o.cust_id
 GROUP BY c.cust_name;
 
+
+
+-- leetcode
+select v.customer_id , count(*) as count_no_trans from
+visits v left join Transactions t
+on v.visit_id = t.visit_id and t.amount is not null
+where t.amount is null
+group by v.customer_id;
