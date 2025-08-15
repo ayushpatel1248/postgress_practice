@@ -65,3 +65,18 @@ visits v left join Transactions t
 on v.visit_id = t.visit_id and t.amount is not null
 where t.amount is null
 group by v.customer_id;
+
+
+-- Queries Quality and Percentage
+
+SELECT 
+    query_name AS query_name, 
+    ROUND(SUM(rating::DECIMAL / position) / COUNT(query_name), 2) AS quality,
+    ROUND(
+        100.0 * COUNT(CASE WHEN rating < 3 THEN 1 END) / COUNT(query_name),
+        2
+    ) AS poor_query_percentage
+FROM 
+    Queries
+GROUP BY 
+    query_name;
