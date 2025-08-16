@@ -80,3 +80,22 @@ FROM
     Queries
 GROUP BY 
     query_name;
+
+
+
+
+-- immediate food deivlery sql 50
+
+SELECT 
+round((count(
+    case when customer_pref_delivery_date - order_date = 0 
+    then 1
+    end
+) :: decimal /
+count(order_date)) * 100, 2) as immediate_percentage
+FROM Delivery d
+WHERE order_date = (
+    SELECT MIN(order_date)
+    FROM Delivery
+    WHERE customer_id = d.customer_id
+);
