@@ -99,3 +99,13 @@ WHERE order_date = (
     FROM Delivery
     WHERE customer_id = d.customer_id
 );
+
+
+-- Game Play Analysis IV
+
+select round((count(*)::decimal / (select count(distinct player_id) from Activity)),2)
+as fraction
+from Activity a
+where event_date = (select min(event_date) 
+from Activity  
+where player_id = a.player_id) + 1;
