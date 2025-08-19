@@ -191,3 +191,5 @@ CASE
 	 else 'low'
     end as category
 from bankdata;
+
+

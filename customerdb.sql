@@ -127,3 +127,14 @@ select user_id, count(user_id) as followers_count
 from Followers 
 group by user_id
 order by user_id;
+
+
+
+-- using window function
+select person_name 
+from (select person_id, person_name, weight, turn,
+sum(weight) over(order by turn)
+from Queue)
+where sum <= 1000
+order by turn desc
+limit 1;
