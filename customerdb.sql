@@ -138,3 +138,9 @@ from Queue)
 where sum <= 1000
 order by turn desc
 limit 1;
+
+
+-- aggregate function question
+select user_id, concat(upper(substr(name, 1,1)), lower(substr(name, 2, length(name)-1))) as name
+from users
+order by user_id;
